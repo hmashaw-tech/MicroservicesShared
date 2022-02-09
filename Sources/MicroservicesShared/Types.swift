@@ -7,3 +7,4 @@
 
 import Foundation
 
+typealias CommentCollection = [String: [Comment]]
