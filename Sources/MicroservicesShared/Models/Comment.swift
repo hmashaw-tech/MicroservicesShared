@@ -10,5 +10,10 @@ import Vapor
 public struct Comment: Content {
     public var id: String?
     public var content: String
+    
+    public init(id: String, content: String) {
+        self.id = id
+        self.content = content
+    }
 }
 
