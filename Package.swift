@@ -7,7 +7,7 @@ let package = Package(
     name: "MicroservicesShared",
     
     platforms: [
-       .macOS(.v10_15)
+       .macOS(.v12)
     ],
     
     products: [
