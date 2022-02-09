@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Utils {
+public struct Utils {
     
-    static func getRandomBytes(_ byteCount: Int = 4) -> String {
+    public static func getRandomBytes(_ byteCount: Int = 4) -> String {
         
         var bytes = [UInt8](repeating: 0, count: byteCount)
         let  _ = SecRandomCopyBytes(kSecRandomDefault, bytes.count, &bytes)
