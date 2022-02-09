@@ -7,7 +7,7 @@
 
 import Vapor
 
-struct Comment: Content {
+public struct Comment: Content {
     var id: String?
     var content: String
 }

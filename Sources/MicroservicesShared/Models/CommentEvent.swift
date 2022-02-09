@@ -7,7 +7,7 @@
 
 import Vapor
 
-struct CommentEvent: Content {
+public struct CommentEvent: Content {
     
     let type: String?
     let data: EventComment?
