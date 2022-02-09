@@ -13,7 +13,7 @@ public struct QueryPost: Content {
     public var title: String
     public var comments: [Comment?]?
     
-    internal init(id: String?, title: String, comments: [Comment?]?) {
+    public init(id: String?, title: String, comments: [Comment?]?) {
         self.id = id
         self.title = title
         self.comments = comments
