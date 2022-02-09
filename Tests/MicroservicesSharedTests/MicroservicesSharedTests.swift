@@ -4,7 +4,11 @@ import XCTest
 final class MicroservicesSharedTests: XCTestCase {
     
     func testDemoService() throws {
-        XCTAssertEqual(DemoService.performServiceAction(), "🎁 Service action was performed 🎁")
+        XCTAssertEqual(DemoService.performServiceAction(), "\n🎁 DemoService action was performed 🎁\n")
+    }
+    
+    func testGetRandomBytes() throws {
+        XCTAssertEqual(Utils.getRandomBytes().count, 8)
     }
 }
 
