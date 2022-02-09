@@ -8,7 +8,7 @@
 import Vapor
 
 public struct Comment: Content {
-    var id: String?
-    var content: String
+    public var id: String?
+    public var content: String
 }
 

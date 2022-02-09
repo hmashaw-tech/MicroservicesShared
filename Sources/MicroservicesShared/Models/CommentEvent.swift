@@ -9,13 +9,13 @@ import Vapor
 
 public struct CommentEvent: Content {
     
-    let type: String?
-    let data: EventComment?
+    public var type: String?
+    public var data: EventComment?
     
-    struct EventComment: Content {
-        var id: String?
-        var content: String?
-        var postId: String?
+    public struct EventComment: Content {
+        public var id: String?
+        public var content: String?
+        public var postId: String?
     }
     
 }
