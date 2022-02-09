@@ -8,3 +8,6 @@
 import Foundation
 
 public typealias CommentCollection = [String: [Comment]]
+
+public typealias PostCollection = [String: QueryPost]
+

@@ -9,8 +9,6 @@ import Vapor
 
 public struct CommentEvent: Content {
     
-    
-    
     public var type: String?
     public var data: EventComment?
     
