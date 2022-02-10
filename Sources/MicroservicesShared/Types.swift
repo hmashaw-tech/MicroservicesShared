@@ -7,7 +7,9 @@
 
 import Foundation
 
+public typealias PostCollection = [String: Post]
+
 public typealias CommentCollection = [String: [Comment]]
 
-public typealias PostCollection = [String: QueryPost]
+public typealias QueryPostCollection = [String: QueryPost]
 
