@@ -15,6 +15,11 @@ public struct PostEvent: Content {
     public struct EventPost: Content {
         public var id: String?
         public var title: String?
+        
+        public init(id: String? = nil, title: String? = nil) {
+            self.id = id
+            self.title = title
+        }
     }
     
     public init(type: String?, data: PostEvent.EventPost?) {
