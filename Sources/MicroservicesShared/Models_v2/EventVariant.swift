@@ -8,6 +8,6 @@
 import Vapor
 
 public protocol EventVariant: Content {
-    var title: String { get }
+    var title: String { get set }
 }
 

@@ -9,7 +9,7 @@ import Vapor
 
 public struct CommentEventX: EventVariant {
     
-    public var type: EventType { .comment }
+    public var type: EventType = .comment
     public var title: String
     public var data: EventComment
     
