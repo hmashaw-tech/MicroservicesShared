@@ -3,8 +3,8 @@ import XCTest
 
 final class MicroservicesSharedTests: XCTestCase {
     
-    func testDemoService() throws {
-        XCTAssertEqual(DemoService.performServiceAction(), "\n🎁 DemoService action was performed 🎁\n")
+    func testBannerService() throws {
+        XCTAssertEqual(BannerService.performServiceAction("DemoService"), "\n🎁 DemoService action performed 🎁\n")
     }
     
     func testGetRandomBytes() throws {
