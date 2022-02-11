@@ -16,7 +16,7 @@ public struct PostEvent: Content {
         public var id: String?
         public var title: String?
         
-        public init(id: String? = nil, title: String? = nil) {
+        public init(id: String?, title: String?) {
             self.id = id
             self.title = title
         }
