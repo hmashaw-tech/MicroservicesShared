@@ -13,7 +13,7 @@ public enum CommentStatus: String {
     case rejected = "rejected"
 }
 
-public enum EventTitle: String {
+public enum EventType_OLD: String {
     case CommentCreated = "CommentCreated"
     case CommentModerated = "CommentModerated"
     case CommentUpdated = "CommentUpdated"
