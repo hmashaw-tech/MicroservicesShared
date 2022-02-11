@@ -10,7 +10,7 @@ import Vapor
 public struct CommentEventX: EventVariant {
     
     public var type: EventType = .comment
-    public var title: String
+    public var titleX: String
     public var data: EventComment
     
     public struct EventComment: Content {
@@ -27,8 +27,8 @@ public struct CommentEventX: EventVariant {
         }
     }
     
-    public init(title: String, data: CommentEventX.EventComment) {
-        self.title = title
+    public init(titleX: String, data: CommentEventX.EventComment) {
+        self.titleX = titleX
         self.data = data
     }
 }
