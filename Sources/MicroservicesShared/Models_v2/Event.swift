@@ -15,7 +15,7 @@ public enum Event {
 
 extension Event {
     
-    struct InvalidTypeError: Error {
+    public struct InvalidTypeError: Error {
         var decoderType: String
     }
     
@@ -23,7 +23,7 @@ extension Event {
         case decoderType
     }
     
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let decoderType = try container.decode(String.self, forKey: .decoderType)
         
@@ -38,3 +38,4 @@ extension Event {
     }
     
 }
+
