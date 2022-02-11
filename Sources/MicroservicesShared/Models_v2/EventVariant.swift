@@ -7,7 +7,7 @@
 
 import Vapor
 
-public protocol EventVariant: Decodable {
-    var type: String { get }
+public protocol EventVariant: Content {
+    var title: String { get }
 }
 

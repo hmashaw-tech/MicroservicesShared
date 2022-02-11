@@ -8,32 +8,43 @@
 import Vapor
 
 public enum Event {
-    case commentEvent(CommentEventX)
-    case postEvent(PostEventX)
+    case comment(CommentEventX)
+    case post(PostEventX)
 }
 
 
-extension Event: Decodable {
+extension Event: Content {
     
     public struct InvalidTypeError: Error {
-        var decoderType: String
+        var type: String
     }
     
     private enum CodingKeys: CodingKey {
-        case decoderType
+        case type
     }
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let decoderType = try container.decode(String.self, forKey: .decoderType)
+        let type = try container.decode(String.self, forKey: .type)
         
-        switch decoderType {
-        case "commentEvent":
-            self = .commentEvent(try CommentEventX(from: decoder))
-        case "postEvent":
-            self = .postEvent(try PostEventX(from: decoder))
+        switch type {
+        case "comment":
+            self = .comment(try CommentEventX(from: decoder))
+        case "post":
+            self = .post(try PostEventX(from: decoder))
         default:
-            throw InvalidTypeError(decoderType: decoderType)
+            throw InvalidTypeError(type: type)
+        }
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        switch self {
+        case .comment(let event):
+            try container.encode(event.type, forKey: .type)
+        case .post(let event):
+            try container.encode(event.type, forKey: .type)
         }
     }
     
