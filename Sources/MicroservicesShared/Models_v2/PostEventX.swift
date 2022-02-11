@@ -15,11 +15,11 @@ public struct PostEventX: EventVariant {
     
     public struct EventPost: Content {
         public var id: String
-        public var type: String
+        public var title: String
         
-        public init(id: String, type: String) {
+        public init(id: String, title: String) {
             self.id = id
-            self.type = type
+            self.title = title
         }
     }
     
