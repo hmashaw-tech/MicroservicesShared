@@ -11,7 +11,7 @@ public struct DemoService {
     
     public init() {}
     
-    public static func performServiceAction(bannerTag: String = "DemoService") -> String {
+    public static func performServiceAction(_ bannerTag: String = "DemoService") -> String {
         return "\n🎁 \(bannerTag) action was performed 🎁\n"
     }
     
