@@ -13,7 +13,7 @@ public enum Event {
 }
 
 
-extension Event {
+extension Event: Decodable {
     
     public struct InvalidTypeError: Error {
         var decoderType: String
