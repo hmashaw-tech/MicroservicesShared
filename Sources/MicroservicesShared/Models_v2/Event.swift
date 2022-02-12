@@ -10,6 +10,7 @@
 
 import Vapor
 
+// @dynamicMemberLookup
 public enum Event {
     case comment(CommentEventX)
     case post(PostEventX)
@@ -24,21 +25,21 @@ extension Event: Content {
     
     private enum CodingKeys: CodingKey {
         case type
-        case titleX
-        case data
-        case id
-        case title
+//        case titleX
+//        case data
+//        case id
+//        case title
     }
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         let type = try container.decode(String.self, forKey: .type)
-        let titleX = try container.decode(String.self, forKey: .titleX)
+//        let titleX = try container.decode(String.self, forKey: .titleX)
         
-        let data = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
-        let id = try data.decode(String.self, forKey: .id)
-        let title = try data.decode(String.self, forKey: .title)
+//        let data = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
+//        let id = try data.decode(String.self, forKey: .id)
+//        let title = try data.decode(String.self, forKey: .title)
         
         switch type {
         case "comment":
