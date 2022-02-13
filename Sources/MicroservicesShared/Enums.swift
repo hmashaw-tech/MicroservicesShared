@@ -14,9 +14,12 @@ public enum CommentStatus: String {
 }
 
 public enum EventType: String {
+    case PostCreated = "PostCreated"
+    
     case CommentCreated = "CommentCreated"
     case CommentModerated = "CommentModerated"
     case CommentUpdated = "CommentUpdated"
-    case PostCreated = "PostCreated"
+    
+    case EventNotMeantForMe = "EventNotMeantForMe"
 }
 
