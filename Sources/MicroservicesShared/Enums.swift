@@ -23,3 +23,7 @@ public enum EventType: String {
     case EventNotMeantForMe = "EventNotMeantForMe"
 }
 
+public enum EmptyEvent {
+    case YesIwantAnEmptyEvent
+}
+

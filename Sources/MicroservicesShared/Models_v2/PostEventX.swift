@@ -22,7 +22,7 @@ public struct PostEventX: EventVariant {
             self.title = title
         }
         
-        public init(emptyPost: Bool) {
+        public init(emptyPost: EmptyEvent) {
             self.id = ""
             self.title = ""
         }
