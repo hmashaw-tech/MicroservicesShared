@@ -21,6 +21,11 @@ public struct PostEventX: EventVariant {
             self.id = id
             self.title = title
         }
+        
+        public init(emptyPost: Bool) {
+            self.id = ""
+            self.title = ""
+        }
     }
     
     public init(titleX: String, data: PostEventX.EventPost) {

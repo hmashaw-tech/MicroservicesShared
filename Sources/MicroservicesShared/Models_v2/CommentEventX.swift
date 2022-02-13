@@ -25,6 +25,13 @@ public struct CommentEventX: EventVariant {
             self.status = status
             self.postId = postId
         }
+        
+        public init(emptyComment: Bool) {
+            self.id = ""
+            self.content = ""
+            self.status = ""
+            self.postId = ""
+        }
     }
     
     public init(titleX: String, data: CommentEventX.EventComment) {
