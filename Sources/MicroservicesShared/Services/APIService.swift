@@ -29,7 +29,7 @@ public struct APIService {
     }
     
     
-    public static func getData<T: Codable>(endpoint: String) async throws -> T {
+    public static func getEvents(endpoint: String) async throws -> [Event] {
         
         guard let url = URL(string: endpoint) else { throw HTTPError.badURL }
         
@@ -39,11 +39,11 @@ public struct APIService {
             throw HTTPError.badResponse
         }
         
-        guard let object = try? JSONDecoder().decode(T.self, from: data) else {
+        guard let events = try? JSONDecoder().decode([Event].self, from: data) else {
             throw HTTPError.errorDecodingData
         }
         
-        return object
+        return events
     }
     
 }
