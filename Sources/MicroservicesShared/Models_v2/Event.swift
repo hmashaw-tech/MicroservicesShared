@@ -34,6 +34,7 @@ extension Event: Content {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let type = try container.decode(String.self, forKey: .type)
+        let titleX = try container.decode(String.self, forKey: .titleX)
         
         switch type {
         case "comment":
