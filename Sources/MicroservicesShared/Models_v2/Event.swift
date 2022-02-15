@@ -25,6 +25,10 @@ extension Event: Content {
     
     private enum CodingKeys: CodingKey {
         case type
+        case titleX
+        case title
+        case content
+        case status
     }
     
     public init(from decoder: Decoder) throws {
