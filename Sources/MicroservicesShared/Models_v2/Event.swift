@@ -26,34 +26,46 @@ extension Event: Content {
     private enum CodingKeys: CodingKey {
         case type
         case titleX
+        case data
+        case id
         case title
         case content
         case status
+        case postId
     }
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let type = try container.decode(String.self, forKey: .type)
-        let titleX = try container.decode(String.self, forKey: .titleX)
         
         switch type {
-        case "comment":
-            self = .comment(try CommentEventX(from: decoder))
         case "post":
             self = .post(try PostEventX(from: decoder))
+        case "comment":
+            self = .comment(try CommentEventX(from: decoder))
         default:
             throw InvalidTypeError(type: type)
         }
     }
     
     public func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
+        var rootContainer = encoder.container(keyedBy: CodingKeys.self)
+        var dataContainer = rootContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
         
         switch self {
-        case .comment(let event):
-            try container.encode(event.type, forKey: .type)
         case .post(let event):
-            try container.encode(event.type, forKey: .type)
+            try rootContainer.encode(event.type, forKey: .type)
+            try rootContainer.encode(event.titleX, forKey: .titleX)
+            try dataContainer.encode(event.data.id, forKey: .id)
+            try dataContainer.encode(event.data.title, forKey: .title)
+            
+        case .comment(let event):
+            try rootContainer.encode(event.type, forKey: .type)
+            try rootContainer.encode(event.titleX, forKey: .titleX)
+            try dataContainer.encode(event.data.id, forKey: .id)
+            try dataContainer.encode(event.data.content, forKey: .content)
+            try dataContainer.encode(event.data.status, forKey: .status)
+            try dataContainer.encode(event.data.postId, forKey: .postId)
         }
     }
     
