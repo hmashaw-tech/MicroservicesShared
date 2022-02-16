@@ -27,5 +27,27 @@ public struct APIService {
         guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw HTTPError.badResponse }
     }
     
+    public static func getEvents(_ endpoint: String) async throws -> [Event] {
+        guard let url = URL(string: endpoint) else { throw HTTPError.badURL }
+        
+        do {
+            let (data, response) = try await URLSession.shared.data(from: url)
+            
+            guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+                throw HTTPError.badResponse
+            }
+            
+            do {
+                let eventArray = try JSONDecoder().decode([Event].self, from: data)
+                return eventArray
+            } catch {
+                return []
+            }
+        } catch {
+            print("getEvents Error: \(error)")
+            return []
+        }
+    }
+    
 }
 
