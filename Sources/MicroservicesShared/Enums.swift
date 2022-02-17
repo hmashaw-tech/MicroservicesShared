@@ -27,3 +27,6 @@ public enum EmptyEvent {
     case YesIwantAnEmptyEvent
 }
 
+public enum HTTPError: Error {
+    case badURL, badResponse, errorDecodingData, invalidURL
+}

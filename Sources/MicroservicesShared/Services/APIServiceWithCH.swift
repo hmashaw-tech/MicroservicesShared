@@ -14,10 +14,6 @@ import Foundation
 
 public struct APIServiceWithCH {
     
-    enum HTTPError: Error {
-        case badURL, badResponse, errorDecodingData, invalidURL
-    }
-    
     public typealias SendCompletionHandler = (HTTPURLResponse) -> ()
     public typealias GetCompletionHandler = ([Event?]?, Error?) -> ()
     

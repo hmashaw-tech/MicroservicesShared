@@ -13,10 +13,6 @@ import FoundationNetworking
 
 public struct APIService {
     
-    enum HTTPError: Error {
-        case badURL, badResponse, errorDecodingData, invalidURL
-    }
-    
     public static func sendEvent<T: Encodable>(_ endpoint: String, _ event: T) async throws {
         
         guard let url = URL(string: endpoint) else { throw HTTPError.badURL }
