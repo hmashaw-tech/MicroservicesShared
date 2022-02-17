@@ -13,7 +13,7 @@ public struct Utils {
         
         #if os(Linux)
         
-        let array = [Int8](repeating: Int8.random(in: 0...127), count: byteCount)
+        let array = [UInt8](repeating: UInt8.random(in: 0...255), count: byteCount)
         return array.map { String(format: "%02X", $0) }.joined()
         
         #else
@@ -29,7 +29,7 @@ public struct Utils {
     }
     
     func getRandomBytesLinux(_ byteCount: Int = 4) -> String {
-        let array = [Int8](repeating: Int8.random(in: 0...127), count: byteCount)
+        let array = [UInt8](repeating: UInt8.random(in: 0...255), count: byteCount)
         return array.map { String(format: "%02X", $0) }.joined()
     }
 }

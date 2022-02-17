@@ -7,6 +7,10 @@
 
 import Vapor
 
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
+
 public struct APIService {
     
     enum HTTPError: Error {
