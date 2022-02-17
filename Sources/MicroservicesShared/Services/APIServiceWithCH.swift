@@ -35,7 +35,7 @@ public struct APIServiceWithCH {
             URLSession.shared.dataTask(with: request) { _, response, error in
                 guard let response = response, error == nil else { return }
                 completion((response as! HTTPURLResponse))
-            }
+            }.resume()
         }
     
     public static func getEvents(
