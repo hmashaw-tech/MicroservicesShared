@@ -5,6 +5,8 @@
 //  Created by Mark Shaw on 2/9/22.
 //
 
+import Vapor
+
 public struct BannerService {
     
     public init() {}
