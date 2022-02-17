@@ -5,8 +5,6 @@
 //  Created by Mark Shaw on 2/9/22.
 //
 
-import Foundation
-
 public struct BannerService {
     
     public init() {}
