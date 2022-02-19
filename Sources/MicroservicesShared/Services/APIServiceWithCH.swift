@@ -9,7 +9,6 @@ import Vapor
 
 #if canImport(FoundationNetworking)
 import FoundationNetworking
-import Foundation
 #endif
 
 public struct APIServiceWithCH {
