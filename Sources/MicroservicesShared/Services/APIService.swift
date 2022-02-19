@@ -9,11 +9,8 @@ import Vapor
 
 #if canImport(FoundationNetworking)
 import FoundationNetworking
-#endif
 
-#if compiler(>=5.5) && canImport(_Concurrency)
-import NIOCore
-
+#else
 public struct APIService {
 
     public static func sendEvent<T: Encodable>(_ endpoint: String, _ event: T) async throws {
@@ -51,7 +48,6 @@ public struct APIService {
             return []
         }
     }
-
 }
 #endif
 
