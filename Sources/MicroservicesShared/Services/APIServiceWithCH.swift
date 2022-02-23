@@ -43,6 +43,7 @@ public struct APIServiceWithCH {
                 
                 do {
                     let events = try JSONDecoder().decode([Event?].self, from: data)
+                    print("APIServiceWithCH.getEvents ::: \(events)")
                     DispatchQueue.main.async { completion(events, nil) }
                 } catch {
                     completion(nil, HTTPError.errorDecodingData)
