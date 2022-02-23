@@ -39,7 +39,7 @@ public enum EndPoint {
     case local
     case k8s
     
-    var postsService: String {
+    public var postsService: String {
         switch self {
         case .local:
             return "http://localhost:4000/events"
@@ -48,7 +48,7 @@ public enum EndPoint {
         }
     }
     
-    var commentsService: String {
+    public var commentsService: String {
         switch self {
         case .local:
             return "http://localhost:4001/events"
@@ -57,7 +57,7 @@ public enum EndPoint {
         }
     }
     
-    var queryService: String {
+    public var queryService: String {
         switch self {
         case .local:
             return "http://localhost:4002/events"
@@ -66,7 +66,7 @@ public enum EndPoint {
         }
     }
     
-    var moderationService: String {
+    public var moderationService: String {
         switch self {
         case .local:
             return "http://localhost:4003/events"
@@ -75,7 +75,7 @@ public enum EndPoint {
         }
     }
     
-    var eventsbusService: String {
+    public var eventsbusService: String {
         switch self {
         case .local:
             return "http://localhost:4005/events"
