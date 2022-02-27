@@ -16,7 +16,7 @@ public enum EndPoint {
         if let value = ProcessInfo.processInfo.environment["APP_ENV"] {
             return "APP_ENV=\(value)"
         } else {
-            return "APP_ENV matching .k8s"
+            return "APP_ENV from App Coded Value"
         }
     }
     
