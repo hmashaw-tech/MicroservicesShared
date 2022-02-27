@@ -7,7 +7,7 @@
 
 import Vapor
 
-public enum EventType: String, Content {
+public enum EventType: Content {
     case comment
     case post
 }
