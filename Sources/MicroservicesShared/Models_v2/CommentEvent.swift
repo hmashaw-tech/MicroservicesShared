@@ -1,5 +1,5 @@
 //
-//  CommentEventX.swift
+//  CommentEvent.swift
 //  
 //
 //  Created by Mark Shaw on 2/11/22.
@@ -7,10 +7,10 @@
 
 import Vapor
 
-public struct CommentEventX: EventVariant {
+public struct CommentEvent: EventVariant {
     
-    public var type: EventTypeX = .comment
-    public var titleX: String
+    public var type: MSEventType = .comment
+    public var eventTitle: String
     public var data: EventComment
     
     public struct EventComment: Content {
@@ -34,8 +34,8 @@ public struct CommentEventX: EventVariant {
         }
     }
     
-    public init(titleX: String, data: CommentEventX.EventComment) {
-        self.titleX = titleX
+    public init(title: String, data: CommentEvent.EventComment) {
+        self.eventTitle = title
         self.data = data
     }
 }

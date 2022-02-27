@@ -1,5 +1,5 @@
 //
-//  CommentEvent.swift
+//  CommentEventV1.swift
 //  
 //
 //  Created by Mark Shaw on 2/9/22.
@@ -7,7 +7,7 @@
 
 import Vapor
 
-public struct CommentEvent: Content {
+public struct CommentEventV1: Content {
     
     public var type: String?
     public var data: EventComment?
@@ -26,7 +26,7 @@ public struct CommentEvent: Content {
         }
     }
     
-    public init(type: String?, data: CommentEvent.EventComment?) {
+    public init(type: String?, data: CommentEventV1.EventComment?) {
         self.type = type
         self.data = data
     }

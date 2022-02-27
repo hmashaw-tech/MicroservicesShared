@@ -1,5 +1,5 @@
 //
-//  PostEvent.swift
+//  PostEventV1.swift
 //  
 //
 //  Created by Mark Shaw on 2/9/22.
@@ -7,7 +7,7 @@
 
 import Vapor
 
-public struct PostEvent: Content {
+public struct PostEventV1: Content {
     
     public var type: String?
     public var data: EventPost?
@@ -22,7 +22,7 @@ public struct PostEvent: Content {
         }
     }
     
-    public init(type: String?, data: PostEvent.EventPost?) {
+    public init(type: String?, data: PostEventV1.EventPost?) {
         self.type = type
         self.data = data
     }

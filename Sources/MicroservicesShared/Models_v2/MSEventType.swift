@@ -1,5 +1,5 @@
 //
-//  EventTypeX.swift
+//  MSEventType.swift
 //  
 //
 //  Created by Mark Shaw on 2/11/22.
@@ -7,7 +7,7 @@
 
 import Vapor
 
-public enum EventTypeX: String, Content {
+public enum MSEventType: Content {
     case comment
     case post
 }

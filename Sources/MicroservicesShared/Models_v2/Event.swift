@@ -12,8 +12,8 @@ import Vapor
 
 // @dynamicMemberLookup
 public enum Event {
-    case comment(CommentEventX)
-    case post(PostEventX)
+    case comment(CommentEvent)
+    case post(PostEvent)
 }
 
 
@@ -25,7 +25,7 @@ extension Event: Content {
     
     private enum CodingKeys: CodingKey {
         case type
-        case titleX
+        case eventTitle
         case data
         case id
         case title
@@ -40,9 +40,9 @@ extension Event: Content {
         
         switch type {
         case "post":
-            self = .post(try PostEventX(from: decoder))
+            self = .post(try PostEvent(from: decoder))
         case "comment":
-            self = .comment(try CommentEventX(from: decoder))
+            self = .comment(try CommentEvent(from: decoder))
         default:
             throw InvalidTypeError(type: type)
         }
@@ -55,13 +55,13 @@ extension Event: Content {
         switch self {
         case .post(let event):
             try rootContainer.encode(event.type, forKey: .type)
-            try rootContainer.encode(event.titleX, forKey: .titleX)
+            try rootContainer.encode(event.eventTitle, forKey: .eventTitle)
             try dataContainer.encode(event.data.id, forKey: .id)
             try dataContainer.encode(event.data.title, forKey: .title)
             
         case .comment(let event):
             try rootContainer.encode(event.type, forKey: .type)
-            try rootContainer.encode(event.titleX, forKey: .titleX)
+            try rootContainer.encode(event.eventTitle, forKey: .eventTitle)
             try dataContainer.encode(event.data.id, forKey: .id)
             try dataContainer.encode(event.data.content, forKey: .content)
             try dataContainer.encode(event.data.status, forKey: .status)
