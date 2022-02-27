@@ -9,7 +9,7 @@ import Vapor
 
 public struct PostEvent: EventVariant {
     
-    public var type: MSEventType = .post
+    public var type: EventType = .post
     public var eventTitle: String
     public var data: EventPost
     

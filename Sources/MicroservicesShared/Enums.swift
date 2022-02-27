@@ -14,7 +14,7 @@ public enum CommentStatus: String {
 }
 
 
-public enum EventType: String {
+public enum MSEventType: String {
     case PostCreated = "PostCreated"
     
     case CommentCreated = "CommentCreated"
